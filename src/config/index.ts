@@ -1,2 +1,0 @@
-const rootUrl = '/'
-export { rootUrl }

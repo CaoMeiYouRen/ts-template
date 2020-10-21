@@ -20,3 +20,5 @@ trim_trailing_whitespace = false
 [*.sh]
 #换行符
 end_of_line = lf
+[package.json]
+indent_size = 2

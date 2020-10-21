@@ -1,49 +1,31 @@
 {
-  "name": "ts-server-template",
+  "name": "ts-template",
   "version": "1.0.0",
-  "description": "一套简单的ts版后台服务器",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "copy": "rimraf dist && gulp copy",
-    "build": "npm run copy && tsc",
-    "dev": "set NODE_ENV=dev&& nodemon ./index",
-    "rm": "rimraf node_modules",
-    "watch": "npm run copy && tsc -w",
-    "start": "npm run build && node ./index"
-  },
+  "description": "一套简单的ts项目模板",
   "author": "CaoMeiYouRen",
   "private": true,
-  "devDependencies": {
-    "@types/compression": "^1.0.1",
-    "@types/debug": "^4.1.5",
-    "@types/express": "^4.17.0",
-    "@types/got": "^9.6.7",
-    "@types/lodash": "^4.14.137",
-    "@types/mongoose": "^5.5.17",
-    "@types/node": "^12.6.8",
-    "@types/swagger-ui-express": "^3.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.3.2",
-    "@typescript-eslint/parser": "^2.3.2",
-    "debug": "^4.1.1",
-    "eslint": "^5.16.0",
-    "eslint-config-alloy": "^2.0.4",
-    "gulp": "^4.0.2",
-    "rimraf": "^3.0.0",
-    "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "cross-env NODE_ENV=production eslint src --fix --ext .ts,.js",
+    "build": "rimraf dist && tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "rm": "rimraf node_modules",
+    "watch": "tsc -w",
+    "start": "npm run build && node ./dist/index"
   },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "express": "^4.17.1",
-    "got": "^9.6.0",
-    "leancloud-storage": "^3.15.0",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
-    "mongoose": "^5.6.13",
-    "swagger-jsdoc": "^3.3.0",
-    "swagger-ts-doc": "^1.0.13",
-    "swagger-ui-express": "^3.0.10"
-  }
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/node": "^14.14.0",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "cross-env": "^7.0.2",
+    "debug": "^4.2.0",
+    "eslint": "^7.11.0",
+    "eslint-config-cmyr": "^0.8.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {}
 }

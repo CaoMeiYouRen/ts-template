@@ -1,9 +1,9 @@
-name: Test
-on: [push, pull_request]
+name: Dependabot Auto Merge
+on: [pull_request]
 
 jobs:
   test:
-    name: Test
+    name: Dependabot Auto Merge
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,3 +23,7 @@ jobs:
       - run: yarn
       - run: npm run lint
       - run: npm run build
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+        with:
+          target: patch
+          github-token: ${{ github.token }}
